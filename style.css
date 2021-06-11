@@ -1,76 +1,67 @@
-html {
-    box-sizing: border-box;
-    background: #ffc600;
-    font-family: monospace;
-    font-size: 20px;
-    font-weight: 200;
+:root {
+  --main-font-color: rgb(73, 73, 73);
+  --main-detail-color: rgba(0, 0, 0, 0.4);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  min-width: 720px;
+  align-items: flex-start;
+}
+.cx_input {
+  border: var(--main-detail-color) 1px solid;
+  position: relative;
+  margin-top: 30px;
+  border-radius: 15px;
+}
+#lupa {
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  pointer-events: none;
+  fill: var(--main-detail-color);
+  transform: scale(0.5);
+  transform-box: fill-box;
+  transform-origin: left top;
+}
+#logo {
+  width: 300px;
+  pointer-events: none;
+}
+.cx_pesquisa {
+  /* border: green 5px solid; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10%;
 }
 
-*,
-*:before,
-*:after {
-    box-sizing: inherit;
+.cx_pesquisa svg,
+.cx_pesquisa input {
+  display: block;
+  margin: auto;
 }
-
-input {
-    width: 100%;
-    padding: 20px;
+.cx_pesquisa input {
+  width: 600px;
+  border: none;
+  font-size: 1.2em;
+  text-align: center;
+  height: 40px;
+  color: var(--main-font-color);
+  border-radius: 15px;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
 }
-
-.search-form {
-    max-width: 400px;
-    margin: 50px auto;
-}
-
-input.search {
-    margin: 0;
-    text-align: center;
-    outline: 0;
-    border: 10px solid #f7f7f7;
-    width: 120%;
-    left: -10%;
-    position: relative;
-    top: 10px;
-    z-index: 2;
-    border-radius: 5px;
-    font-size: 40px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
-}
-
-.suggestions {
-    margin: 0;
-    padding: 0;
-    position: relative;
-    /*perspective:20px;*/
-}
-
-.suggestions li {
-    background: white;
-    list-style: none;
-    border-bottom: 1px solid #d8d8d8;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.14);
-    margin: 0;
-    padding: 20px;
-    transition: background 0.2s;
-    display: flex;
-    justify-content: space-between;
-    text-transform: capitalize;
-}
-
-.suggestions li:nth-child(even) {
-    transform: perspective(100px) rotateX(3deg) translateY(2px) scale(1.001);
-    background: linear-gradient(to bottom, #ffffff 0%, #efefef 100%);
-}
-
-.suggestions li:nth-child(odd) {
-    transform: perspective(100px) rotateX(-3deg) translateY(3px);
-    background: linear-gradient(to top, #ffffff 0%, #efefef 100%);
-}
-
-span.population {
-    font-size: 15px;
-}
-
-.hl {
-    background: #ffc600;
+input:focus {
+  outline: none !important;
+  -webkit-box-shadow: 5px 5px 15px 5px #000000;
+  box-shadow: 5px 5px 15px 5px #000000;
 }
